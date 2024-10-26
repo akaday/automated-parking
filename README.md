@@ -44,6 +44,17 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
   POST /api/spots
   ```
 
+## Running the Python Script
+1. Ensure MongoDB is running on your local machine.
+2. Navigate to the `scripts` directory:
+   ```
+   cd scripts
+   ```
+3. Run the Python script:
+   ```
+   python user_data_reel.py
+   ```
+
 ## Contributing Guidelines
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix.
