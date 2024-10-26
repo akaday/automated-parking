@@ -1,11 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+const bodyParser = require('./middleware/bodyParser');
+const connectDB = require('./config/database');
 
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyParser);
 
-mongoose.connect('mongodb://localhost:27017/parking', { useNewUrlParser: true, useUnifiedTopology: true });
+connectDB();
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
