@@ -25,6 +25,16 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
    npm install
    ```
 
+### Building the React App
+1. Navigate to the `frontend` directory:
+   ```
+   cd frontend
+   ```
+2. Build the React app:
+   ```
+   npm run build
+   ```
+
 ## Usage Instructions
 ### Starting the Server
 1. Ensure MongoDB is running on your local machine.
@@ -66,6 +76,7 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
 2. Choose a deployment platform (e.g., Heroku, AWS, etc.).
 3. Follow the platform's instructions to deploy the application.
 4. Ensure the MongoDB connection string is updated to use the production database.
+5. Ensure your `index.js` serves the static files correctly from the `frontend/build` directory.
 
 ## Contributing Guidelines
 1. Fork the repository.
