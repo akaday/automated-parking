@@ -37,4 +37,29 @@ router.post('/spots', async (req, res) => {
   }
 });
 
+// Update entry and exit times for a parking spot
+router.put('/spots/:id/times', async (req, res) => {
+  try {
+    const spot = await ParkingSpot.findById(req.params.id);
+    if (!spot) {
+      return res.status(404).json({ message: 'Parking spot not found' });
+    }
+
+    spot.entryTime = req.body.entryTime;
+    spot.exitTime = req.body.exitTime;
+
+    // Calculate price based on entry and exit times
+    const entryTime = new Date(spot.entryTime);
+    const exitTime = new Date(spot.exitTime);
+    const duration = (exitTime - entryTime) / (1000 * 60 * 60); // duration in hours
+    const pricePerHour = 5; // example price per hour
+    spot.price = duration * pricePerHour;
+
+    await spot.save();
+    res.json(spot);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 module.exports = router;
