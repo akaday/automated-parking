@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Parking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Automated Parking</h1>
+    <form id="parkingForm">
+        <label for="spotNumber">Spot Number:</label>
+        <input type="number" id="spotNumber" name="spotNumber" required>
+        <label for="entryTime">Entry Time:</label>
+        <input type="datetime-local" id="entryTime" name="entryTime" required>
+        <label for="exitTime">Exit Time:</label>
+        <input type="datetime-local" id="exitTime" name="exitTime" required>
+        <button type="submit">Add Parking Spot</button>
+    </form>
+    <h2>Available Parking Spots</h2>
+    <ul id="parkingSpotsList"></ul>
+    <script src="script.js"></script>
+</body>
+</html>
