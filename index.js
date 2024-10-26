@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors'); // Pe8ca
+const path = require('path');
 
 const app = express();
 app.use(bodyParser.json());
@@ -17,4 +18,9 @@ app.listen(port, () => {
 const parkingRoutes = require('./routes/parking');
 app.use('/api', parkingRoutes);
 
-app.use(express.static('public')); // P58d1
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'frontend', 'build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
+}
