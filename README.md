@@ -5,6 +5,7 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
 - Adding new parking spots
 - Retrieving available parking spots
 - Updating the status of parking spots
+- Calculating time-based pricing for parking spots
 
 ## Setup Instructions
 ### Dependencies
@@ -52,6 +53,10 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
 - To create a new parking spot:
   ```
   POST /api/spots
+  ```
+- To update entry and exit times for a parking spot and calculate the price:
+  ```
+  PUT /api/spots/:id/times
   ```
 
 ## Running the Python Script
