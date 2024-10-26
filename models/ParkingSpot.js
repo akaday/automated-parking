@@ -9,6 +9,18 @@ const ParkingSpotSchema = new mongoose.Schema({
   isAvailable: {
     type: Boolean,
     default: true
+  },
+  entryTime: {
+    type: Date,
+    default: null
+  },
+  exitTime: {
+    type: Date,
+    default: null
+  },
+  price: {
+    type: Number,
+    default: 0
   }
 });
 

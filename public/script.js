@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
         const spotNumber = document.getElementById('spotNumber').value;
+        const entryTime = document.getElementById('entryTime').value;
+        const exitTime = document.getElementById('exitTime').value;
 
         try {
             const response = await fetch('/api/spots', {
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ spotNumber, isAvailable: true })
+                body: JSON.stringify({ spotNumber, isAvailable: true, entryTime, exitTime })
             });
 
             if (response.ok) {
@@ -38,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayParkingSpot(spot) {
         const listItem = document.createElement('li');
-        listItem.textContent = `Spot Number: ${spot.spotNumber}, Available: ${spot.isAvailable}`;
+        listItem.textContent = `Spot Number: ${spot.spotNumber}, Available: ${spot.isAvailable}, Price: $${spot.price.toFixed(2)}`;
         parkingSpotsList.appendChild(listItem);
     }
 
