@@ -1,12 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('cors'); // Pe8ca
+const cors = require('cors');
 const path = require('path');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors()); // Pe8ca
+app.use(cors());
 
 mongoose.connect('mongodb://localhost:27017/parking', { useNewUrlParser: true, useUnifiedTopology: true });
 
