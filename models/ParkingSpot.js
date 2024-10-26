@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 
 const ParkingSpotSchema = new mongoose.Schema({
@@ -25,3 +26,4 @@ const ParkingSpotSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('ParkingSpot', ParkingSpotSchema);
+
