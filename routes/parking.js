@@ -17,8 +17,18 @@ router.get('/spots', async (req, res) => {
   try {
     const { location, size } = req.query;
     const query = {};
-    if (location) query.location = location;
-    if (size) query.size = size;
+    if (location) {
+      if (typeof location !== 'string') {
+        return res.status(400).json({ message: 'Invalid location' });
+      }
+      query.location = { $eq: location };
+    }
+    if (size) {
+      if (typeof size !== 'string') {
+        return res.status(400).json({ message: 'Invalid size' });
+      }
+      query.size = { $eq: size };
+    }
     const spots = await ParkingSpot.find(query);
     res.json(spots);
   } catch (err) {
