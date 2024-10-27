@@ -91,3 +91,31 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
 
 ## License
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+## Geosurveillance Feature Setup
+### Overview
+The geosurveillance feature allows tracking and storing geolocation data for each parking spot. This feature helps in monitoring the location and size of parking spots.
+
+### Backend Setup
+1. Update the `ParkingSpot` model in `models/ParkingSpot.js` to include `location` and `size` fields.
+2. Update the API routes in `routes/parking.js` to handle `location` and `size` fields when creating and retrieving parking spots.
+
+### Frontend Setup
+1. Update the form in `public/index.html` to include `location` and `size` input fields.
+2. Update the script in `public/script.js` to capture and send `location` and `size` data to the backend.
+
+### Usage
+- To create a new parking spot with geolocation data:
+  ```
+  POST /api/spots
+  {
+    "spotNumber": 1,
+    "isAvailable": true,
+    "location": "40.712776, -74.005974",
+    "size": "large"
+  }
+  ```
+- To retrieve parking spots based on location and size:
+  ```
+  GET /api/spots?location=40.712776, -74.005974&size=large
+  ```

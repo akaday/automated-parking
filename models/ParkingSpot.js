@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 
 const ParkingSpotSchema = new mongoose.Schema({
@@ -22,8 +21,15 @@ const ParkingSpotSchema = new mongoose.Schema({
   price: {
     type: Number,
     default: 0
+  },
+  location: {
+    type: String,
+    required: true
+  },
+  size: {
+    type: String,
+    required: true
   }
 });
 
 module.exports = mongoose.model('ParkingSpot', ParkingSpotSchema);
-
