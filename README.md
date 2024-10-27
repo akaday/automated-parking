@@ -5,6 +5,7 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
 - Adding new parking spots
 - Retrieving available parking spots
 - Updating the status of parking spots
+- Calculating time-based pricing for parking spots
 
 ## Setup Instructions
 ### Dependencies
@@ -25,6 +26,16 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
    npm install
    ```
 
+### Building the React App
+1. Navigate to the `frontend` directory:
+   ```
+   cd frontend
+   ```
+2. Build the React app:
+   ```
+   npm run build
+   ```
+
 ## Usage Instructions
 ### Starting the Server
 1. Ensure MongoDB is running on your local machine.
@@ -32,7 +43,7 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
    ```
    node index.js
    ```
-3. The server will be running on `http://localhost:5000`.
+3. The server will be running on `http://localhost:5002`.
 
 ### Using the API
 - To get all parking spots:
@@ -42,6 +53,10 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
 - To create a new parking spot:
   ```
   POST /api/spots
+  ```
+- To update entry and exit times for a parking spot and calculate the price:
+  ```
+  PUT /api/spots/:id/times
   ```
 
 ## Running the Python Script
@@ -66,6 +81,7 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
 2. Choose a deployment platform (e.g., Heroku, AWS, etc.).
 3. Follow the platform's instructions to deploy the application.
 4. Ensure the MongoDB connection string is updated to use the production database.
+5. Ensure your `index.js` serves the static files correctly from the `frontend/build` directory.
 
 ## Contributing Guidelines
 1. Fork the repository.
