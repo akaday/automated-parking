@@ -26,7 +26,7 @@ app.use(limiter);
 
 connectDB();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5002;
 
 const parkingRoutes = require('./routes/parking');
 app.use('/api', parkingRoutes);
