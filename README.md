@@ -43,7 +43,7 @@ Automated Parking is a system designed to manage parking spots efficiently. It p
    ```
    node index.js
    ```
-3. The server will be running on `http://localhost:5000`.
+3. The server will be running on `http://localhost:5002`.
 
 ### Using the API
 - To get all parking spots:
