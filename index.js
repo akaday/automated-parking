@@ -19,7 +19,7 @@ app.use(limiter);
 
 mongoose.connect('mongodb://localhost:27017/parking', { useNewUrlParser: true, useUnifiedTopology: true });
 
-const port = process.env.PORT || 5002;
+const port = process.env.PORT || 5000;
 
 const parkingRoutes = require('./routes/parking');
 app.use('/api', parkingRoutes);
